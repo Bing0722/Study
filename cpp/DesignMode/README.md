@@ -78,4 +78,4 @@
 - [模式方法(Template Method)](./BehavioralPatterns/TemplateMethodPattern/)
 - [访问者(Visitor)](./BehavioralPatterns/VisitorPattern/)
 
-该文档内容基于[Refactoring.Guru](https://refactoringguru.cn/)来进行学习。
+>该文档内容基于[Refactoring.Guru](https://refactoringguru.cn/)来进行学习。

@@ -61,7 +61,7 @@ protected:
 
 /**
  * @class ExtendedAbstraction
- * @brief 客户端代码应能够与任何预配置的抽象-实现组合协同工作。
+ * @brief 客户端代码应能够与任何预配置的抽象实现组合协同工作。
  *
  */
 class ExtendedAbstraction : public Abstraction {
