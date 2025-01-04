@@ -1,16 +1,27 @@
 #include "Composite.h"
 #include <iostream>
 
+/**
+ * 客户端代码通过基础接口与所有组件进行交互。
+ */
 void ClientCode(const Component *component) {
   std::cout << "Result: " << component->Operation() << std::endl;
 }
 
+/**
+ * 由于子节点管理操作在基础组件类中声明，客户端代码可以与任何组件（无论是简单的还是复杂的）进行交互，
+ * 而不依赖于它们的具体类。
+ */
 void ClientCode2(Component *component1, Component *component2) {
   if (component1->IsComposite()) {
     component1->Add(component2);
   }
   std::cout << "Result: " << component1->Operation() << std::endl;
 }
+
+/**
+ * 这样，客户端代码可以支持简单的叶子组件...
+ */
 
 int main() {
   Component *simple = new Leaf;
