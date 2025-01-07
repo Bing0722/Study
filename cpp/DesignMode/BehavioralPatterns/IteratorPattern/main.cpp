@@ -1,9 +1,8 @@
 #include "iterator.h"
 
 /**
- * The client code may or may not know about the Concrete Iterator or Collection
- * classes, for this implementation the container is generic so you can used
- * with an int or with a custom class.
+ * 客户端代码可能知道也可能不知道具体的迭代器或集合类。
+ * 在此实现中，容器是泛型的，因此可用于 int 或自定义类。
  */
 void ClientCode() {
   std::cout << "________________Iterator with "

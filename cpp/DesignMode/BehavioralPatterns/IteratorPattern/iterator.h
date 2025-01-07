@@ -2,10 +2,9 @@
 #define ITERATOR_H
 
 /**
- * Iterator Design Pattern
+ * 迭代器设计模式
  *
- * Intent: Lets you traverse elements of a collection without exposing its
- * underlying representation (list, stack, tree, etc.).
+ * 意图：允许您遍历集合的元素，而无需暴露其底层表示（列表、堆栈、树等）。
  */
 
 #include <iostream>
@@ -13,8 +12,7 @@
 #include <vector>
 
 /**
- * C++ has its own implementation of iterator that works with a different
- * generics containers defined by the standard library.
+ * C++ 自带迭代器实现，适用于标准库中定义的各种泛型容器。
  */
 
 template <typename T, typename U> class Iterator {
@@ -38,8 +36,7 @@ private:
 };
 
 /**
- * Generic Collections/Containers provides one or several methods for retrieving
- * fresh iterator instances, compatible with the collection class.
+ * 泛型集合/容器提供一个或多个方法，用于检索与集合类兼容的新迭代器实例。
  */
 
 template <class T> class Container {

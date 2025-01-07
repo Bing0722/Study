@@ -1,6 +1,16 @@
 #include "proxy.h"
 
-void ClientCode(const Subject &subject) { subject.Request(); }
+/**
+ * 客户端代码应该通过 Subject 接口与所有对象（包括 RealSubject 和 Proxy）交互，
+ * 以便支持 RealSubject 和 Proxy。在现实生活中，客户端通常直接与 RealSubject
+ * 交互。 在这种情况下，为了更容易实现模式，可以让 Proxy 继承自 RealSubject
+ * 的类。
+ */
+void ClientCode(const Subject &subject) {
+  // ...
+  subject.Request();
+  // ...
+}
 
 int main() {
   std::cout << "Client: Executing the client code with a real subject:\n";

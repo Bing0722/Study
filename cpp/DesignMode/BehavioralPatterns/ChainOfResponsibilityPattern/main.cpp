@@ -2,8 +2,8 @@
 #include <vector>
 
 /**
- * The client code is usually suited to work with a single handler. In most
- * cases, it is not even aware that the handler is part of a chain.
+ * 客户端代码通常适合与单个处理器一起工作。
+ * 在大多数情况下，它甚至不知道处理器是链的一部分。
  */
 void ClientCode(Handler &handler) {
   std::vector<std::string> food = {"Nut", "Banana", "Cup of coffee"};
@@ -18,7 +18,7 @@ void ClientCode(Handler &handler) {
   }
 }
 /**
- * The other part of the client code constructs the actual chain.
+ * 客户端代码的另一部分构建实际的处理器链。
  */
 int main() {
   MonkeyHandler *monkey = new MonkeyHandler;
@@ -27,8 +27,7 @@ int main() {
   monkey->SetNext(squirrel)->SetNext(dog);
 
   /**
-   * The client should be able to send a request to any handler, not just the
-   * first one in the chain.
+   * 客户端应该能够将请求发送给任何处理器，而不仅仅是链中的第一个。
    */
   std::cout << "Chain: Monkey > Squirrel > Dog\n\n";
   ClientCode(*monkey);
