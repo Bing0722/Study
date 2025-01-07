@@ -3,13 +3,12 @@
 
 #include <iostream>
 #include <typeinfo>
-/**
- * The base State class declares methods that all Concrete State should
- * implement and also provides a backreference to the Context object, associated
- * with the State. This backreference can be used by States to transition the
- * Context to another State.
- */
 
+/**
+ * 基础状态类（State）声明了所有具体状态类需要实现的方法，
+ * 并且提供了一个对与状态相关联的上下文对象（Context）的引用。
+ * 状态可以利用这个引用将上下文切换到另一个状态。
+ */
 class Context;
 
 class State {
@@ -29,13 +28,12 @@ public:
 };
 
 /**
- * The Context defines the interface of interest to clients. It also maintains a
- * reference to an instance of a State subclass, which represents the current
- * state of the Context.
+ * 上下文类（Context）定义了客户端感兴趣的接口。
+ * 它还维护了一个对状态子类实例的引用，这个实例表示上下文的当前状态。
  */
 class Context {
   /**
-   * @var State A reference to the current state of the Context.
+   * @var State 上下文当前状态的引用。
    */
 private:
   State *state_;
@@ -44,7 +42,7 @@ public:
   Context(State *state) : state_(nullptr) { this->TransitionTo(state); }
   ~Context() { delete state_; }
   /**
-   * The Context allows changing the State object at runtime.
+   * 上下文允许在运行时更改状态对象。
    */
   void TransitionTo(State *state) {
     std::cout << "Context: Transition to " << typeid(*state).name() << ".\n";
@@ -54,15 +52,14 @@ public:
     this->state_->set_context(this);
   }
   /**
-   * The Context delegates part of its behavior to the current State object.
+   * 上下文将其部分行为委托给当前的状态对象。
    */
   void Request1() { this->state_->Handle1(); }
   void Request2() { this->state_->Handle2(); }
 };
 
 /**
- * Concrete States implement various behaviors, associated with a state of the
- * Context.
+ * 具体状态类（ConcreteState）实现了与上下文状态相关的各种行为。
  */
 
 class ConcreteStateA : public State {

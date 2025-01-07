@@ -3,10 +3,10 @@
 
 #include <iostream>
 #include <string>
+
 /**
- * The Mediator interface declares a method used by components to notify the
- * mediator about various events. The Mediator may react to these events and
- * pass the execution to other components.
+ * 中介者接口声明了一个方法，用于组件通知中介者各种事件。
+ * 中介者可以对这些事件做出反应，并将执行传递给其他组件。
  */
 class BaseComponent;
 class Mediator {
@@ -15,8 +15,7 @@ public:
 };
 
 /**
- * The Base Component provides the basic functionality of storing a mediator's
- * instance inside component objects.
+ * 基础组件为组件对象提供了存储中介者实例的基本功能。
  */
 class BaseComponent {
 protected:
@@ -28,8 +27,7 @@ public:
 };
 
 /**
- * Concrete Components implement various functionality. They don't depend on
- * other components. They also don't depend on any concrete mediator classes.
+ * 具体组件实现了各种功能。它们不依赖于其他组件，也不依赖于任何具体的中介者类。
  */
 class Component1 : public BaseComponent {
 public:
@@ -56,8 +54,7 @@ public:
 };
 
 /**
- * Concrete Mediators implement cooperative behavior by coordinating several
- * components.
+ * 具体中介者通过协调多个组件实现协作行为。
  */
 class ConcreteMediator : public Mediator {
 private:

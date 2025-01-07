@@ -2,15 +2,14 @@
 #define OBSERVER_H
 
 /**
- * Observer Design Pattern
+ * 观察者设计模式
  *
- * Intent: Lets you define a subscription mechanism to notify multiple objects
- * about any events that happen to the object they're observing.
+ * 意图：允许你定义一种订阅机制，以通知多个对象它们正在观察的对象发生的任何事件。
  *
- * Note that there's a lot of different terms with similar meaning associated
- * with this pattern. Just remember that the Subject is also called the
- * Publisher and the Observer is often called the Subscriber and vice versa.
- * Also the verbs "observe", "listen" or "track" usually mean the same thing.
+ * 注意：与此模式相关的术语有很多相似的含义。
+ * 记住，Subject 也被称为 Publisher（发布者），
+ * Observer 通常被称为 Subscriber（订阅者），反之亦然。
+ * 此外，“observe”（观察）、“listen”（监听）或“track”（跟踪）通常是一个意思。
  */
 
 #include <iostream>
@@ -32,16 +31,14 @@ public:
 };
 
 /**
- * The Subject owns some important state and notifies observers when the state
- * changes.
+ * Subject 持有一些重要状态，并在状态发生更改时通知观察者。
  */
-
 class Subject : public ISubject {
 public:
   virtual ~Subject() { std::cout << "Goodbye, I was the Subject.\n"; }
 
   /**
-   * The subscription management methods.
+   * 订阅管理方法。
    */
   void Attach(IObserver *observer) override {
     list_observer_.push_back(observer);
@@ -66,10 +63,9 @@ public:
   }
 
   /**
-   * Usually, the subscription logic is only a fraction of what a Subject can
-   * really do. Subjects commonly hold some important business logic, that
-   * triggers a notification method whenever something important is about to
-   * happen (or after it).
+   * 通常，订阅逻辑只是 Subject 能真正做的事情的一小部分。
+   * Subject 通常包含一些重要的业务逻辑，
+   * 当有重要事件即将发生（或在发生之后）时，会触发通知方法。
    */
   void SomeBusinessLogic() {
     this->message_ = "change message message";

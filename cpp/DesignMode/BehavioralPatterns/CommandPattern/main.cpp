@@ -1,7 +1,7 @@
 #include "command.h"
 
 /**
- * The client code can parameterize an invoker with any commands.
+ * 客户端代码可以使用任何命令来参数化调用者。
  */
 
 int main() {

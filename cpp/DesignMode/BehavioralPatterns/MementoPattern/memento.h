@@ -5,8 +5,8 @@
 #include <vector>
 
 /**
- * The Memento interface provides a way to retrieve the memento's metadata, such
- * as creation date or name. However, it doesn't expose the Originator's state.
+ * 备忘录接口提供了一种方法来检索备忘录的元数据，例如创建日期或名称。
+ * 然而，它并不暴露发起人的状态。
  */
 class Memento {
 public:
@@ -17,8 +17,7 @@ public:
 };
 
 /**
- * The Concrete Memento contains the infrastructure for storing the Originator's
- * state.
+ * 具体备忘录类包含存储发起人状态的基础设施。
  */
 class ConcreteMemento : public Memento {
 private:
@@ -32,11 +31,11 @@ public:
     this->date_ = std::ctime(&now);
   }
   /**
-   * The Originator uses this method when restoring its state.
+   * 发起者在恢复状态时会使用此方法。
    */
   std::string state() const override { return this->state_; }
   /**
-   * The rest of the methods are used by the Caretaker to display metadata.
+   * 其余的方法由 Caretaker 用于显示元数据。
    */
   std::string GetName() const override {
     return this->date_ + " / (" + this->state_.substr(0, 9) + "...)";
@@ -45,14 +44,13 @@ public:
 };
 
 /**
- * The Originator holds some important state that may change over time. It also
- * defines a method for saving the state inside a memento and another method for
- * restoring the state from it.
+ * 发起者持有一些可能随时间改变的重要状态。
+ * 它还定义了一种方法，用于将状态保存在备忘录中，
+ * 以及从备忘录中恢复状态的另一种方法。
  */
 class Originator {
   /**
-   * @var string For the sake of simplicity, the originator's state is stored
-   * inside a single variable.
+   * @var string 为了简单起见，发起者的状态存储在一个变量中。
    */
 private:
   std::string state_;
@@ -75,9 +73,9 @@ public:
     std::cout << "Originator: My initial state is: " << this->state_ << "\n";
   }
   /**
-   * The Originator's business logic may affect its internal state. Therefore,
-   * the client should backup the state before launching methods of the business
-   * logic via the save() method.
+   * 发起者的业务逻辑可能会影响其内部状态。
+   * 因此，客户端在通过 save() 方法启动业务逻辑之前，
+   * 应该备份状态。
    */
   void DoSomething() {
     std::cout << "Originator: I'm doing something important.\n";
@@ -87,11 +85,11 @@ public:
   }
 
   /**
-   * Saves the current state inside a memento.
+   * 将当前状态保存到备忘录中。
    */
   Memento *Save() { return new ConcreteMemento(this->state_); }
   /**
-   * Restores the Originator's state from a memento object.
+   * 从备忘录对象中恢复发起者的状态。
    */
   void Restore(Memento *memento) {
     this->state_ = memento->state();
@@ -101,9 +99,9 @@ public:
 };
 
 /**
- * The Caretaker doesn't depend on the Concrete Memento class. Therefore, it
- * doesn't have access to the originator's state, stored inside the memento. It
- * works with all mementos via the base Memento interface.
+ * Caretaker 不依赖于 Concrete Memento 类。
+ * 因此，它无法访问存储在备忘录中的发起者的状态。
+ * 它通过基础的 Memento 接口与所有备忘录一起工作。
  */
 class Caretaker {
   /**
