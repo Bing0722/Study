@@ -1,6 +1,7 @@
 #ifndef MEMENTO_H
 #define MEMENTO_H
 
+#include <ctime>
 #include <iostream>
 #include <vector>
 
