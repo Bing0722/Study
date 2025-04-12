@@ -1,7 +1,0 @@
-/home/Bing/MyFile/Study/cmake/Step4/build/CMakeFiles/Tutorial.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/CMakeFiles/edit_cache.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/CMakeFiles/rebuild_cache.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/MathFunctions/CMakeFiles/MathFunctions.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/MathFunctions/CMakeFiles/SqrtLibrary.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/MathFunctions/CMakeFiles/edit_cache.dir
-/home/Bing/MyFile/Study/cmake/Step4/build/MathFunctions/CMakeFiles/rebuild_cache.dir
