@@ -1,3 +1,0 @@
-/home/Bing/MyFile/Study/cmake/Step1/build/CMakeFiles/Tutorial.dir
-/home/Bing/MyFile/Study/cmake/Step1/build/CMakeFiles/edit_cache.dir
-/home/Bing/MyFile/Study/cmake/Step1/build/CMakeFiles/rebuild_cache.dir
